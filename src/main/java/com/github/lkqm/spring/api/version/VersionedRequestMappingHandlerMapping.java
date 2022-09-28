@@ -65,7 +65,7 @@ public class VersionedRequestMappingHandlerMapping extends RequestMappingHandler
                     String version = apiVersion.value().trim();
                     InnerUtils.checkVersionNumber(version, method);
 
-                    String prefix = "/v" + version;
+                    String prefix = version;
                     if (apiVersionProperties.getUriLocation() == ApiVersionProperties.UriLocation.END) {
                         info = info.combine(RequestMappingInfo.paths(new String[]{prefix}).build());
                     } else {
